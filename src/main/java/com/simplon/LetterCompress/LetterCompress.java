@@ -3,22 +3,18 @@ package com.simplon.LetterCompress;
 
 public class LetterCompress
 {
-    private String lettersToCompress;
+
     public String getLetterCompress(String lettersToCompress){
-        int cpt = 0;
-        //char[] c = lettersToCompress.toCharArray();
+
         String result = "";
 
-        for (int i = 0; i <lettersToCompress.length() ; i++) {
-
-            for (char letter :lettersToCompress.toCharArray()){
-               // if(lettersToCompress.contains(String.valueOf(lettersToCompress.charAt(i)))) cpt++;
-                if(lettersToCompress.contains(String.valueOf(letter))) cpt++;
-
-
+        for (char letter :lettersToCompress.toCharArray()) {
+            int cpt = 0;
+            for (int i = 0; i <lettersToCompress.length() ; i++){
+                if(lettersToCompress.charAt(i) == letter) cpt++;
             }
-            result += lettersToCompress.charAt(i) +""+cpt;
-
+            if(!result.contains(String.valueOf(letter)))
+                result += letter +""+cpt;
         }
         return result;
     }
@@ -26,7 +22,6 @@ public class LetterCompress
     public static void main( String[] args )
     {
         LetterCompress letterCompress = new LetterCompress();
-        //letterCompress.getLetterCompress("aaabb");
         System.out.println( letterCompress.getLetterCompress("aaabb"));
     }
 }

@@ -13,8 +13,10 @@ public class LetterCompressTest {
     LetterCompress letterCompress = new LetterCompress();
 
     @Test
-    public void getLetterCompress() {
-        String result = letterCompress.getLetterCompress("aaabb");
+    public void getLetterCompressTest() {
+        // set
+        String lettersTcompress = "aaabb";
+        String result = letterCompress.getLetterCompress(lettersTcompress);
         assertEquals("a3b2", result);
     }
 
